@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RainReady2Go | Rain protection for students</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  </head>
+
+  <body>
+    <!-- Payment status banner (filled by main.py) -->
+    <div id="banner-root"></div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="container header-inner">
+<a href="#top" class="logo">
+          <span class="logo-icon" style="width: auto; background: transparent; overflow: visible;">
+            <img src="logo.png" alt="RainReady2Go Logo" style="height: 2.25rem; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span style="display:none; width:2.25rem; height:2.25rem; align-items:center; justify-content:center; background: var(--sun); border-radius: 0.75rem;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>
+            </span>
+          </span>
+          <span class="logo-text">RainReady<span class="logo-accent">2Go</span></span>
+        </a>
+        <nav class="nav-desktop">
+          <a href="#products">Products</a>
+          <a href="#campus">On campus</a>
+          <a href="#about">About us</a>
+          <a href="#insights">Why it works</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#products" class="btn btn-ink btn-sm header-cta">Shop now</a>
+          <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <svg id="icon-menu" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="icon-close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="nav-mobile" class="nav-mobile" hidden>
+        <a href="#products">Products</a>
+        <a href="#campus">On campus</a>
+        <a href="#about">About us</a>
+        <a href="#insights">Why it works</a>
+        <a href="#products" class="btn btn-ink nav-mobile-cta">Shop now</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="pill">
+              <span class="dot"></span>
+              Campus rain protection
+            </span>
+            <h1 class="hero-title">
+              Caught in the rain?
+              <span class="text-primary">Be ready in seconds.</span>
+            </h1>
+            <p class="hero-text">
+              Affordable, ready-to-buy rain gear for students, sold right on
+              campus so you can grab it the moment the sky opens up.
+            </p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-ink btn-lg">
+                Shop rain gear
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="#campus" class="btn btn-white btn-lg">Find us on campus</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <p class="eyebrow-light">Right now at the gate</p>
+              <span class="badge">Ready to buy</span>
+            </div>
+            <ul id="hero-picks" class="hero-picks"></ul>
+            <p class="hero-card-note">
+              The pocket umbrella was the top pick in our student survey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+<!-- ============ PORTRAIT VIDEO SECTION ============ -->
+<section class="container" aria-label="Advertisement video">
+  <div class="video-box portrait-video-box">
+    <div class="video-glow"></div>
+<video  
+  id="campus-ad-video"
+  src="campus-ad.mp4" 
+  class="responsive-portrait-video"
+  autoplay
+  loop 
+  playsinline
+  preload="auto">
+  Your browser does not support the video tag.
+</video>
+   
+  </div>
+</section>
+
+<script>
+  // Fallback scroll observer to ensure it plays reliably across mobile/desktop browsers
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("campus-ad-video");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(error => console.log("Autoplay prevented:", error));
+        } else {
+          video.pause();
+        }
+      }, { threshold: 0.3 });
+    });
+    if (video) observer.observe(video);
+  });
+</script>
+
+      <!-- ============ PROBLEM ============ -->
+      <section class="container section">
+        <p class="eyebrow">The problem</p>
+        <h2 class="section-title">Rain doesn't check your schedule.</h2>
+        <div id="problems-grid" class="grid grid-3 mt-12"></div>
+      </section>
+
+      <!-- ============ PRODUCTS ============ -->
+      <section id="products" class="section section-white">
+        <div class="container">
+          <p class="eyebrow">Products</p>
+          <h2 class="section-title">Rain gear priced for students.</h2>
+          <div id="products-grid" class="grid grid-products mt-12"></div>
+        </div>
+      </section>
+
+      <!-- ============ CAMPUS ============ -->
+      <section id="campus" class="section">
+        <div class="container two-col">
+          <div>
+            <p class="eyebrow">On campus</p>
+            <h2 class="section-title">Right where the rain catches you.</h2>
+            <p class="lead">
+              We're starting at the places students pass through first. The
+              school entrance and the canteen were the most-picked spots in our
+              survey.
+            </p>
+            <div id="campus-spots" class="spots"></div>
+          </div>
+          <ol id="steps-list" class="steps"></ol>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="two-col two-col-end">
+            <div>
+              <p class="eyebrow">About us</p>
+              <h2 class="section-title">Built for the commute students actually have.</h2>
+            </div>
+            <div class="about-text">
+              <p>
+                RainReady2Go is a student-focused venture that makes rain
+                protection easy to get when the weather turns. Students are
+                often caught off guard on the way to and from school, and
+                ordering online is too slow to help.
+              </p>
+              <p>
+                Our idea is simple: keep affordable, ready-to-buy rain gear
+                where students already are, so staying dry takes a quick
+                purchase instead of a trip across town.
+              </p>
+            </div>
+          </div>
+
+          <div id="values-grid" class="grid grid-3 mt-12"></div>
+
+          <p class="small-note mt-10">
+            Created by 3rd Year BSIT students at Cebu Eastern College.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ INSIGHTS ============ -->
+      <section id="insights" class="section section-soft">
+        <div class="container">
+          <p class="eyebrow">Why it works</p>
+          <h2 class="section-title">What students told us.</h2>
+          <div id="stats-grid" class="grid grid-4 mt-12"></div>
+          <p class="small-note mt-6">Based on a survey of 30 students.</p>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <h2>Affordable rain protection for students, ready when you need it.</h2>
+            <a href="#products" class="btn btn-sun btn-lg">
+              Shop rain gear
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+        <a href="#top" class="logo">
+  <span class="logo-icon" style="width: auto; background: transparent; overflow: visible;">
+    <!-- Change height: 2.25rem to 3rem or 3.5rem here -->
+    <img src="logo.png" alt="RainReady2Go Logo" style="height: 3.25rem; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <span style="display:none; width:2.25rem; height:2.25rem; align-items:center; justify-content:center; background: var(--sun); border-radius: 0.75rem;">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>
+    </span>
+  </span>
+  <span class="logo-text">RainReady<span class="logo-accent">2Go</span></span>
+</a>
+          <p class="footer-text">
+            Affordable rain protection for students, ready when you need it.
+          </p>
+        </div>
+
+        <div>
+          <p class="eyebrow-light">Explore</p>
+          <ul class="footer-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#campus">On campus</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#insights">Why it works</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow-light">Find us</p>
+          <p class="footer-address">
+            On the Cebu Eastern College campus<br />
+            Leon Kilat St., Cebu City, Philippines
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="container">
+          © <span id="year">2026</span> RainReady2Go. A student venture from the
+          College of Information Technology.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ============ ORDER DIALOG ============ -->
+    <dialog id="order-dialog" class="dialog">
+      <div id="order-content"></div>
+    </dialog>
+
+    <!-- Python logic -->
+    <script type="py" src="main.py"></script>
+  </body>
+</html>
