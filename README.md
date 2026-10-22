@@ -1,4 +1,4 @@
-# RainReady2Go
+<img width="440" height="108" alt="image" src="https://github.com/user-attachments/assets/8bbd84b0-6deb-478d-8f73-e4e7df04d374" /># RainReady2Go
 
 Rain protection for students, sold right on campus. A student venture by 3rd Year BSIT students at Cebu Eastern College.
 
@@ -18,7 +18,7 @@ Rain protection for students, sold right on campus. A student venture by 3rd Yea
 | Ocampo, Gladys | Testing and documentation |
 
 ## Live site
-https://USERNAME.github.io/rainready2go/
+[https://USERNAME.github.io/rainready2go/](https://jimsbro.github.io/rainready2go/)
 
 ## Tech
 HTML, CSS, PyScript (Python in the browser)
