@@ -10,10 +10,10 @@ Rain protection for students, sold right on campus. A student venture by 3rd Yea
 | Member | Role |
 |--------|------|
 | Cael, Jims Brylle P.  | Project Lead |
-| Artiaga, Niña Nikie | Photos A |
-| Cartilla, Sochen Jovel Ann | Photos B |
-| Contero, Ashley Jane | Video |
-|Lucero, Jepoy| Logo |
+| Artiaga, Niña Nikie | Product Image Provider |
+| Cartilla, Sochen Jovel Ann | Product Image Provider A |
+| Contero, Ashley Jane | Video Ad editor |
+|Lucero, Jepoy| Logo creator |
 | Ocampo, Gladys | Testing and documentation |
 
 ## Live site
