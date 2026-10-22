@@ -11,7 +11,7 @@ Rain protection for students, sold right on campus. A student venture by 3rd Yea
 |--------|------|
 | Cael, Jims Brylle P.  | Project Lead |
 | Artiaga, Niña Nikie | Product Image Provider |
-| Cartilla, Sochen Jovel Ann | Product Image Provider A |
+| Cartilla, Sochen Jovel Ann | Product Image Provider |
 | Contero, Ashley Jane | Video Ad editor |
 |Lucero, Jepoy| Logo creator |
 | Ocampo, Gladys | Testing and documentation |
