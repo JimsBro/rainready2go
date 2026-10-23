@@ -19,5 +19,8 @@ Rain protection for students, sold right on campus. A student venture by 3rd Yea
 ## Live site
 [https://USERNAME.github.io/rainready2go/](https://jimsbro.github.io/rainready2go/)
 
+## Video Presentation
+https://drive.google.com/file/d/1KmKY6i80t7AVrU-ASJtJ18j598VlR--S/view?usp=drive_link
+
 ## Tech
 HTML, CSS, PyScript (Python in the browser)
